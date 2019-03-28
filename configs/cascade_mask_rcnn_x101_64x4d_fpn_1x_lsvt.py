@@ -223,7 +223,7 @@ log_config = dict(
 total_epochs = 12
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-work_dir = './work_dirs/cascade_mask_rcnn_x101_64x4d_fpn_1x/normal'
+work_dir = './work_dirs/cascade_mask_rcnn_x101_64x4d_fpn_1x_lsvt/normal'
 load_from = None
 resume_from = None
 workflow = [('train', 1)]
