@@ -13,7 +13,7 @@ origin_model = torch.load(args.pretrained_path)
 origin_model = origin_model['state_dict']
 
 # remove the unfitted layers
-removed_keys = ['fc_cls', 'fc_reg']
+removed_keys = ['fc_cls', 'fc_reg', 'conv_logits']
 newdict = dict(origin_model)
 for key in origin_model.keys():
     for removed_key in removed_keys:
