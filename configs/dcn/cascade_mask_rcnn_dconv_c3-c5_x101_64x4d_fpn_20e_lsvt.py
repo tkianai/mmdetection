@@ -229,6 +229,6 @@ total_epochs = 20
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
 work_dir = './work_dirs/cascade_mask_rcnn_dconv_c3-c5_x101_64x4d_fpn_20e_lsvt'
-load_from = './work_dirs/pretrained/cascade_mask_rcnn_x101_64x4d_coco_for_icdar_dcn.pth'
+load_from = './work_dirs/pretrained/cascade_mask_rcnn_x101_64x4d_coco_for_icdar.pth'
 resume_from = None
 workflow = [('train', 1)]
