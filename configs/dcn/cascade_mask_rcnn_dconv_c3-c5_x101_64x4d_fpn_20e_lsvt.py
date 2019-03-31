@@ -177,7 +177,7 @@ data = dict(
         type=dataset_type,
         ann_file=data_root + 'lsvt_train_v2.json',
         img_prefix=data_root + 'train_full_images/',
-        img_scale=[(1500, 800), (1500, 1000), (1500, 1200)],
+        img_scale=[(1600, 400), (1600, 800), (1600, 1000), (1600, 1200)],
         img_norm_cfg=img_norm_cfg,
         size_divisor=32,
         flip_ratio=0.5,
@@ -188,7 +188,7 @@ data = dict(
         type=dataset_type,
         ann_file=data_root + 'lsvt_val_v2.json',
         img_prefix=data_root + 'train_full_images/',
-        img_scale=(1500, 1200),
+        img_scale=(1600, 1200),
         img_norm_cfg=img_norm_cfg,
         size_divisor=32,
         flip_ratio=0,
@@ -199,7 +199,7 @@ data = dict(
         type=dataset_type,
         ann_file=data_root + 'lsvt_val_v2.json',
         img_prefix=data_root + 'train_full_images/',
-        img_scale=(1500, 1200),
+        img_scale=(1600, 1200),
         img_norm_cfg=img_norm_cfg,
         size_divisor=32,
         flip_ratio=0,
@@ -215,7 +215,7 @@ lr_config = dict(
     warmup='linear',
     warmup_iters=500,
     warmup_ratio=1.0 / 3,
-    step=[9, 11])
+    step=[4, 6])
 checkpoint_config = dict(interval=1)
 # yapf:disable
 log_config = dict(
@@ -226,10 +226,10 @@ log_config = dict(
     ])
 # yapf:enable
 # runtime settings
-total_epochs = 12
+total_epochs = 8
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-work_dir = './work_dirs/cascade_mask_rcnn_dconv_c3-c5_x101_64x4d_fpn_20e_lsvt_3scale'
+work_dir = './work_dirs/cascade_mask_rcnn_dconv_c3-c5_x101_64x4d_fpn_20e_lsvt_4scale'
 load_from = './work_dirs/cascade_mask_rcnn_dconv_c3-c5_x101_64x4d_fpn_20e_lsvt/epoch_20.pth'
 resume_from = None
 workflow = [('train', 1)]
