@@ -179,7 +179,7 @@ data = dict(
             data_root + 'LSVT/lsvt_train_v2.json', 
             data_root + 'RECTS/rects_train.json', 
             data_root + 'ArT/art_train_v2.json',
-            data_root + 'cocotext_full.json',
+            data_root + 'cocotext_full_v2.json',
             data_root + 'MTWI/mtwi_full.json',
             data_root + 'DAS/das_full.json'
         ],
