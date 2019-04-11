@@ -166,6 +166,7 @@ class CustomDataset(Dataset):
         img_info = self.img_infos[idx]
         # load image
         img = mmcv.imread(osp.join(self.img_prefix, img_info['filename']))
+        print(osp.join(self.img_prefix, img_info['filename']))
         # load proposals if necessary
         if self.proposals is not None:
             proposals = self.proposals[idx][:self.num_max_proposals]
