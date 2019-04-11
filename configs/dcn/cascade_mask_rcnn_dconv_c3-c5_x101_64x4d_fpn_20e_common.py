@@ -191,7 +191,7 @@ data = dict(
             data_root + 'MTWI/',
             data_root + 'DAS/',
         ],
-        img_scale=[(600, 100), (600, 300)],
+        img_scale=[(1600, 1000), (1600, 1300)],
         img_norm_cfg=img_norm_cfg,
         size_divisor=32,
         flip_ratio=0.5,
