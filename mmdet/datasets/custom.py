@@ -206,7 +206,7 @@ class CustomDataset(Dataset):
         # randomly sample a scale
         img_scale = random_scale(self.img_scales, self.multiscale_mode)
         if img is None:
-            print(osp.join(self.img_prefix, img_info['filename']))
+            print("extra_aug error: {}".format(osp.join(self.img_prefix, img_info['filename'])))
         img, img_shape, pad_shape, scale_factor = self.img_transform(
             img, img_scale, flip, keep_ratio=self.resize_keep_ratio)
         img = img.copy()
