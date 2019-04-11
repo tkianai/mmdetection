@@ -5,6 +5,7 @@ from mmdet.apis import inference_detector, show_result
 import argparse
 import os
 import numpy as np
+import pycocotools.mask as maskUtils
 
 
 def _save(img, result, save_name, score_thr=0.3):
