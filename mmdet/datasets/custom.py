@@ -204,6 +204,7 @@ class CustomDataset(Dataset):
         # randomly sample a scale
         img_scale = random_scale(self.img_scales, self.multiscale_mode)
         try:
+            a = img.shape
             img, img_shape, pad_shape, scale_factor = self.img_transform(
             img, img_scale, flip, keep_ratio=self.resize_keep_ratio)
         except:
