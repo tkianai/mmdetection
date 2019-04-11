@@ -166,8 +166,6 @@ class CustomDataset(Dataset):
         img_info = self.img_infos[idx]
         # load image
         img = mmcv.imread(osp.join(self.img_prefix, img_info['filename']))
-        if img is None:
-            print("read error: {}".format(osp.join(self.img_prefix, img_info['filename'])))
         # load proposals if necessary
         if self.proposals is not None:
             proposals = self.proposals[idx][:self.num_max_proposals]
@@ -205,8 +203,6 @@ class CustomDataset(Dataset):
         flip = True if np.random.rand() < self.flip_ratio else False
         # randomly sample a scale
         img_scale = random_scale(self.img_scales, self.multiscale_mode)
-        if img is None:
-            print("extra_aug error: {}".format(osp.join(self.img_prefix, img_info['filename'])))
         img, img_shape, pad_shape, scale_factor = self.img_transform(
             img, img_scale, flip, keep_ratio=self.resize_keep_ratio)
         img = img.copy()
