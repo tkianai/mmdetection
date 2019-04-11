@@ -208,6 +208,7 @@ class CustomDataset(Dataset):
             img, img_scale, flip, keep_ratio=self.resize_keep_ratio)
         except:
             print(osp.join(self.img_prefix, img_info['filename']))
+            exit(0)
         img = img.copy()
         if self.proposals is not None:
             proposals = self.bbox_transform(proposals, img_shape, scale_factor,
