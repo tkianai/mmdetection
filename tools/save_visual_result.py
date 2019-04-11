@@ -6,7 +6,8 @@ import argparse
 import os
 import numpy as np
 
-def _save(img, result, save_name):
+
+def _save(img, result, save_name, score_thr=0.3):
     img = mmcv.imread(img)
     if isinstance(result, tuple):
         bbox_result, segm_result = result
