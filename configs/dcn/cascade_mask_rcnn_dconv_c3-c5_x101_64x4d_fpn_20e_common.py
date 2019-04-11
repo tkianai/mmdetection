@@ -176,22 +176,22 @@ data = dict(
     train=dict(
         type=dataset_type,
         ann_file=[
-            #data_root + 'LSVT/lsvt_train_v2.json', 
-            #data_root + 'RECTS/rects_train.json', 
-            #data_root + 'ArT/art_train_v2.json',
-            #data_root + 'cocotext_full_v2.json',
-            #data_root + 'MTWI/mtwi_full.json',
+            data_root + 'LSVT/lsvt_train_v2.json', 
+            data_root + 'RECTS/rects_train.json', 
+            data_root + 'ArT/art_train_v2.json',
+            data_root + 'cocotext_full_v2.json',
+            data_root + 'MTWI/mtwi_full.json',
             data_root + 'DAS/das_full.json'
         ],
         img_prefix=[
-            #data_root + 'LSVT/train_full_images/',
-            #data_root + 'RECTS/img/',
-            #data_root + 'ArT/train_images/',
-            #data_root + 'coco/',
-            #data_root + 'MTWI/',
+            data_root + 'LSVT/train_full_images/',
+            data_root + 'RECTS/img/',
+            data_root + 'ArT/train_images/',
+            data_root + 'coco/',
+            data_root + 'MTWI/',
             data_root + 'DAS/'
         ],
-        img_scale=[(1600, 1000), (1600, 1300)],
+        img_scale=[(600, 100), (600, 300)],
         img_norm_cfg=img_norm_cfg,
         size_divisor=32,
         flip_ratio=0.5,
