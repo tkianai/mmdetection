@@ -179,7 +179,7 @@ data = dict(
             data_root + 'LSVT/lsvt_train_v2.json', 
             data_root + 'RECTS/rects_train.json', 
             data_root + 'ArT/art_train_v2.json',
-            #data_root + 'cocotext_full_v2.json',
+            data_root + 'cocotext_full_v2.json',
             data_root + 'MTWI/mtwi_full.json',
             data_root + 'DAS/das_full.json',
         ],
@@ -187,7 +187,7 @@ data = dict(
             data_root + 'LSVT/train_full_images/',
             data_root + 'RECTS/img/',
             data_root + 'ArT/train_images/',
-            #data_root + 'coco/',
+            data_root + 'coco/',
             data_root + 'MTWI/',
             data_root + 'DAS/',
         ],
@@ -242,7 +242,7 @@ log_config = dict(
 # runtime settings
 total_epochs = 20
 dist_params = dict(backend='nccl')
-log_level = 'INFO'
+log_level = 'DEBUG'
 work_dir = './work_dirs/cascade_mask_rcnn_dconv_c3-c5_x101_64x4d_fpn_20e_common_2s'
 load_from = './work_dirs/pretrained/cascade_mask_rcnn_x101_64x4d_coco_for_icdar.pth'
 resume_from = None

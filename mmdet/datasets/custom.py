@@ -203,13 +203,10 @@ class CustomDataset(Dataset):
         flip = True if np.random.rand() < self.flip_ratio else False
         # randomly sample a scale
         img_scale = random_scale(self.img_scales, self.multiscale_mode)
-        try:
-            a = img.shape
-            img, img_shape, pad_shape, scale_factor = self.img_transform(
-            img, img_scale, flip, keep_ratio=self.resize_keep_ratio)
-        except:
+        if img is None:
             print(osp.join(self.img_prefix, img_info['filename']))
-            exit(0)
+        img, img_shape, pad_shape, scale_factor = self.img_transform(
+            img, img_scale, flip, keep_ratio=self.resize_keep_ratio)
         img = img.copy()
         if self.proposals is not None:
             proposals = self.bbox_transform(proposals, img_shape, scale_factor,
