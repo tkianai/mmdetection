@@ -106,5 +106,5 @@ if __name__ == "__main__":
 
     for i, result in enumerate(inference_detector(model, imgs, cfg, device='cuda:0')):
         save_name = imgs[i].split('/')[-1]
-        save_name = '.'.join(save_name.split('.')[:-1]) + 'json'
+        save_name = '.'.join(save_name.split('.')[:-1]) + '.json'
         generate_json(imgs[i], result, os.path.join(args.save_dir, save_name))
