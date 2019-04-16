@@ -81,10 +81,10 @@ if __name__ == "__main__":
     assert len(CLS_NAME) == len(COLOR_MASK) == NUMBER_CLS, "color mask length should equal to class number!"
     
     parser = argparse.ArgumentParser(description="Generate labelme json file!")
-    parser.add_argument('--config-file')
-    parser.add_argument('--ckpt')
-    parser.add_argument('--img-dir')
-    parser.add_argument('--save-dir')
+    parser.add_argument('--config-file', default='configs/dcn/cascade_mask_rcnn_dconv_c3-c5_x101_64x4d_fpn_20e_celebAmask.py', help='model config file.')
+    parser.add_argument('--ckpt', help='model checkpoint.')
+    parser.add_argument('--img-dir', default='demo/faces/', help='directory which concludes images.')
+    parser.add_argument('--save-dir', default='demo/faces/labelme', help='directory to store the generated labelme json file.')
     args = parser.parse_args()
     if not os.path.exists(args.save_dir):
         os.makedirs(args.save_dir)
