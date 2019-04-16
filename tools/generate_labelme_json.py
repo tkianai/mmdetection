@@ -44,6 +44,8 @@ def generate_json(img_path, result, save_path):
     shapes = []
     bbox_result, segm_result = result
     for category, segm in enumerate(segm_result):
+        if len(segm) == 0:
+            continue
         _mask = maskUtils.decode(segm).astype(np.bool)
         _mask = _mask[..., 0]
         polygons = Mask(_mask).polygons()
