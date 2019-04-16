@@ -199,7 +199,7 @@ data = dict(
         type=dataset_type,
         ann_file=data_root + 'rects_val.json',
         img_prefix=data_root + 'img/',
-        img_scale=(1600, 1200),
+        img_scale=(1600, 1300),
         img_norm_cfg=img_norm_cfg,
         size_divisor=32,
         flip_ratio=0,
@@ -207,7 +207,7 @@ data = dict(
         with_label=False,
         test_mode=True))
 # optimizer
-optimizer = dict(type='SGD', lr=0.02, momentum=0.9, weight_decay=0.0001)
+optimizer = dict(type='SGD', lr=0.005, momentum=0.9, weight_decay=0.0001)
 optimizer_config = dict(grad_clip=dict(max_norm=35, norm_type=2))
 # learning policy
 lr_config = dict(
