@@ -26,7 +26,7 @@ def generate_json(img_path, result, save_path):
     with open(img_path, 'rb') as r_obj:
         imgData = r_obj.read()
         imgData = base64.b64encode(imgData).decode('utf-8')
-    img = ccv2.imread(img_path)
+    img = cv2.imread(img_path)
     height = img.shape[0]
     width = img.shape[1]
 
