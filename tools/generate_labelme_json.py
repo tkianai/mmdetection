@@ -6,7 +6,7 @@ import json
 import numpy as np
 import pycocotools.mask as maskUtils
 import mmcv
-from mmcv.runner import load_ckeckpoint
+from mmcv.runner import load_checkpoint
 from mmdet.models import build_detector
 from mmdet.apis import inference_detector
 from imantics import Mask
@@ -92,7 +92,7 @@ if __name__ == "__main__":
     cfg = mmcv.Config.fromfile(args.config_file)
     cfg.model.pretrained = None
     model = build_detector(cfg.model, test_cfg=cfg.test_cfg)
-    _ = load_ckeckpoint(model, args.ckpt)
+    _ = load_checkpoint(model, args.ckpt)
 
     imgs = []
     for root, _, files in os.walk(args.img_dir):
