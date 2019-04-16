@@ -53,6 +53,8 @@ def generate_json(img_path, result, save_path):
             points_keep = []
             idx_remove = []
             ori_area = cv2.contourArea(points)
+            if len(points) < 4 or ori_area < 0.001:
+                continue
             for p in range(len(points)):
                 index = list(range(len(points)))
                 index.remove(p)
