@@ -191,7 +191,7 @@ data = dict(
             data_root + 'MTWI/',
             data_root + 'DAS/',
         ],
-        img_scale=[(1333, 800), (1333, 1200)],
+        img_scale=[(1500, 1100), (1500, 800)],
         img_norm_cfg=img_norm_cfg,
         size_divisor=32,
         flip_ratio=0.5,
@@ -202,7 +202,7 @@ data = dict(
         type=dataset_type,
         ann_file=data_root + 'RECTS/rects_val.json',
         img_prefix=data_root + 'RECTS/img/',
-        img_scale=(1333, 1200),
+        img_scale=(1500, 1100),
         img_norm_cfg=img_norm_cfg,
         size_divisor=32,
         flip_ratio=0,
@@ -213,7 +213,7 @@ data = dict(
         type=dataset_type,
         ann_file=data_root + 'RECTS/rects_val.json',
         img_prefix=data_root + 'RECTS/img/',
-        img_scale=(1333, 1200),
+        img_scale=(1500, 1100),
         img_norm_cfg=img_norm_cfg,
         size_divisor=32,
         flip_ratio=0,
@@ -221,7 +221,7 @@ data = dict(
         with_label=False,
         test_mode=True))
 # optimizer
-optimizer = dict(type='SGD', lr=0.02, momentum=0.9, weight_decay=0.0001)
+optimizer = dict(type='SGD', lr=0.025, momentum=0.9, weight_decay=0.0001)
 optimizer_config = dict(grad_clip=dict(max_norm=35, norm_type=2))
 # learning policy
 lr_config = dict(
@@ -243,7 +243,7 @@ log_config = dict(
 total_epochs = 20
 dist_params = dict(backend='nccl')
 log_level = 'DEBUG'
-work_dir = './work_dirs/cascade_mask_rcnn_dconv_c3-c5_x101_64x4d_fpn_20e_common_2s'
+work_dir = './work_dirs/cascade_mask_rcnn_dconv_c3-c5_x101_64x4d_fpn_20e_common_2s_larger'
 load_from = './work_dirs/pretrained/cascade_mask_rcnn_x101_64x4d_coco_for_icdar.pth'
 resume_from = None
 workflow = [('train', 1)]
